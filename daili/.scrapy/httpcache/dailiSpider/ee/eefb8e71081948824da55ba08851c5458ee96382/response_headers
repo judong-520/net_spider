@@ -1,0 +1,13 @@
+Server: nginx/1.1.19
+Date: Thu, 07 Jun 2018 11:23:54 GMT
+Content-Type: text/html; charset=utf-8
+Status: 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Etag: W/"a6229c767533990ff9a0539174108fd8"
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Runtime: 0.008655
+X-Request-Id: a32bc8a5-1869-4ad6-a006-37f740a6a35d
+X-Powered-By: Phusion Passenger 5.0.28
+Content-Encoding: gzip

@@ -1,0 +1,11 @@
+Server: Tengine
+Content-Type: text/html; charset=utf-8
+Date: Wed, 06 Jun 2018 12:55:10 GMT
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.20
+Via: cache16.l2et15-2[325,200-0,M], cache2.l2et15-2[333,0], kunlun8.cn172[370,200-0,M], kunlun4.cn172[370,0]
+X-Cache: MISS TCP_MISS dirn:10:236307771 mlen:-1
+X-Swift-Savetime: Wed, 06 Jun 2018 12:55:10 GMT
+X-Swift-Cachetime: 0
+Timing-Allow-Origin: *
+Eagleid: b68cee4415282897098432645e

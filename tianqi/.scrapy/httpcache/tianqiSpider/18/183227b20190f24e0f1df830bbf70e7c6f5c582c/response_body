@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title id="l">【成都锦江区天气预报】锦江天气预报一周_锦江天气预报10天、15天查询_天气网</title>
+<meta name="keywords" content="锦江天气预报查询,锦江天气预报一周,锦江天气预报10天,锦江天气预报查询15天, 锦江未来一周的天气预报">
+<meta name="description" content="★天气网（www.tianqi.com）★提供全国及世界各大城市天气预报查询以及历史天气查询，实时更新天气，准确提供天气预报一周查询及未来天气预报10天、15天、一个月查询服务。欢迎定制城市天气预报服务。">
+<meta name="viewport" content="user-scalable=no, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, width=device-width">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<link rel="stylesheet" type="text/css" href="/static/wap2018/css/wap_tianqi2017.css">
+	<script type="text/javascript" src="https://m.tianqi.com/getIPinfo/index.php"></script>
+	<script type="text/javascript" src="/static/tianqi2018/js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=s1pBDUfynbLM3BbQ5S4dfBAjKbtHsiCN"></script>
+
+	<script type="text/javascript" src="https://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+
+<script type="text/javascript">
+
+(function(){
+    document.addEventListener('DOMContentLoaded', function () {
+        var html = document.documentElement;
+        var windowWidth = html.clientWidth;
+		if(windowWidth > 750) windowWidth = 750;
+        html.style.fontSize = windowWidth / 7.5 + 'px';
+    }, false);
+})();
+var pagetype = 'cityindex';
+var currcity = '锦江';
+var isshow =;
+console.log(isshow);
+var html_sop = ' <div class="mengban_hhx">';
+html_sop+='<div id="option_hhx">';
+html_sop+='<div>是否授权获取您当前的位置?</div>';
+html_sop+='<div>';
+html_sop+='<text id="confirm" class="btn_hhx">获取</text>';
+html_sop+='<text id="cancel" class="btn_hhx">取消</text>';
+html_sop+='</div>';
+html_sop+='</div>';
+html_sop+='</div>';
+
+
+if (isshow==0){
+    window.onload = document.write(html_sop)
+}
+if (isshow==1){
+    $('.wap_box').removeClass('hide_hhx');
+    $('.mengban_hhx').hide();
+}
+
+
+let confirm = $('#confirm');
+let cancel = $('#cancel');
+let option_ = $('#option_');
+confirm.on('click',function(){
+
+    $('.mengban_hhx').hide();
+    $.getScript("/static/tianqi2018/js/weizhi.js",function(){  //加载test.js,成功后，并执行回调函数
+    });
+
+})
+
+cancel.on('click',function(){
+    $('.mengban_hhx').hide();
+    $('.wap_box').show();
+})
+</script>
+<script type="text/javascript" src="/static/wap2018/js/wap_tianqi2017.js"></script>
+<style>
+	.mengban_hhx{
+		width: 100%;height:100%;background: rgba(0,0,0,.1);position: fixed;z-index: 9999999;left:0;top:0;display: flex;align-items: center;justify-content: center;
+	}
+	#option_hhx{width: 75%;border: 1px solid #e0e0e0;box-sizing: border-box;overflow: hidden;border-bottom: none;box-shadow: 2px 2px 5px #000;background: #fff;}
+	#option_hhx>div:nth-child(1){width: 100%;font-size: 20px;padding:20px 0px;white-space: nowrap;text-align: center;
+		color: #000000;}
+	#option_hhx>div:nth-child(2){
+		display: flex;align-items: center;justify-content: space-between;
+	}
+	.btn_hhx{
+		text-align: center;border: 1px solid #e0e0e0;width: 50%;box-sizing: border-box;font-size: 20px;
+	}
+	.hide_hhx{display: none}
+</style>
+</head>
+
+
+
+<body>
+
+
+
+<div id="allmap"></div>
+<div class="wap_box "  >
+	<form action=""  method="post" id="newurl">
+		<input type="hidden" name="ct" value="" id="ctname">
+	</form>
+	<div class="banbox bantop"><script type="text/javascript">cityindex_top()</script></div>
+    <div class="topbar" style="border:none;">                
+		<a href="/" class="logo" title="锦江天气预报"></a>
+        <h2>成都锦江区天气预报</h2>
+        <a class="menuico"></a>
+    </div>
+	<div class="submenu" id="submenu">
+	<dl>
+		<dt><a href="/news/" class="b0">天气资讯</a></dt>
+		<dd>
+			<a href="/news/list_404_1.html" title="最新天气" class="b404">最新天气</a>
+			<a href="/news/list_405_1.html" title="天气常识" class="b405">天气常识</a>
+			<a href="/news/list_406_1.html" title="万年历" class="b406">万年历</a>
+			<a href="/news/list_407_1.html" title="其它资讯" class="b407">其它资讯</a>
+		</dd>
+
+		<dt><a href="/toutiao/" class="b0">天气头条</a></dt>
+		<dd>
+			<a href="/toutiao/tianqi/" title="天气" class="b317">天气</a>
+			<a href="/toutiao/hots/" title="热点" class="b306">热点</a>
+			<a href="/toutiao/shenghuo/" title="生活" class="b301">生活</a>
+			<a href="/toutiao/yule/" title="娱乐" class="b305">娱乐</a>
+			<a href="/toutiao/yangsheng/" title="养生" class="b303">养生</a>
+			<a href="/toutiao/lvyou/" title="旅游" class="b302">旅游</a>
+			<a href="/toutiao/meishi/" title="美食" class="b304">美食</a>
+			<a href="/toutiao/gaoxiao/" title="搞笑" class="b310">搞笑</a>
+			<a href="/toutiao/nvxing/" title="女性" class="b318">女性</a>			
+		</dd>
+
+        <dt><a href="http://m.tianqi.com/">天气工具</a></dt>
+        <dd>
+            <a href="/prov/">全国天气</a>
+            <a href="/worldcity.html">国际天气</a>
+            <a href="/jingdian/">景点天气</a>
+            <a href="/index.php?c=other&a=wxyt">卫星云图</a>
+            <a href="/index.php?c=other&a=tqbb">视频播报</a>
+            <a href="/air/">pm2.5查询</a>
+            <a href="http://m.lishi.tianqi.com">历史天气</a>
+            <a href="/news/">天气新闻</a>
+            <a href="/chuanyi/">穿衣指数</a>
+            <a href="/qiwen/china/">气温查询</a>
+        </dd>
+    </dl>
+</div>
+<script language="javascript">
+    $(document).ready(function(){
+        $(".menuico").click(function(){
+            if ($("#submenu").css('display') == 'none'){
+                $("#submenu").show();
+            }else{
+                $("#submenu").hide();
+            }
+        });
+		var menuheight = $(window).height() - $('.topbar').height();
+		$("#submenu").height(menuheight);
+		$(window).bind("scroll", function () {  
+			$("#submenu").hide();
+		});
+    });
+</script>
+	<div class="city_weather cbg_b1">
+		<div class="date">2018年06月06日　星期三　戊戌年四月廿三 </div>
+        <dl class="temp">
+			<dt><img src="/static/wap2018/ico1/b1.png"></dt>
+            <dd class="now">30<i>°C</i></dd>
+            <dd class="txt">多云 19~34°C</dd>
+        </dl>
+
+		<div class="info"><span class="b1">优 34</span><span class="b2">湿度 41%</span><span class="b3">南风 1级</span></div>
+		<div class="ihongbao"><script type="text/javascript">cityindex_hongbao()</script></div>
+	</div>
+	<div class="weather_week">
+					<dl>
+				<dt>明天</dt>
+				<dd class="txt">06月07日</dd>
+				<dd class="img"><img src="/static/wap2018/ico2/b2.png"></dd>
+				<dd class="txt2">阴</dd>
+				<dd class="txt">21~<b>32</b>°C</dd>
+				<dd class="txt3"><b style="background-color: #79b800">优</b></dd>
+			</dl>
+					<dl>
+				<dt>后天</dt>
+				<dd class="txt">06月08日</dd>
+				<dd class="img"><img src="/static/wap2018/ico2/b7.png"></dd>
+				<dd class="txt2">小雨到中雨</dd>
+				<dd class="txt">19~<b>27</b>°C</dd>
+				<dd class="txt3"><b style="background-color: #79b800">优</b></dd>
+			</dl>
+					<dl>
+				<dt>星期六</dt>
+				<dd class="txt">06月09日</dd>
+				<dd class="img"><img src="/static/wap2018/ico2/b0.png"></dd>
+				<dd class="txt2">晴</dd>
+				<dd class="txt">20~<b>30</b>°C</dd>
+				<dd class="txt3"><b style="background-color: #79b800">优</b></dd>
+			</dl>
+					<dl>
+				<dt>星期日</dt>
+				<dd class="txt">06月10日</dd>
+				<dd class="img"><img src="/static/wap2018/ico2/b1.png"></dd>
+				<dd class="txt2">多云</dd>
+				<dd class="txt">21~<b>31</b>°C</dd>
+				<dd class="txt3"><b style="background-color: #ffbb17">良</b></dd>
+			</dl>
+					<dl>
+				<dt>星期一</dt>
+				<dd class="txt">06月11日</dd>
+				<dd class="img"><img src="/static/wap2018/ico2/b1.png"></dd>
+				<dd class="txt2">多云</dd>
+				<dd class="txt">21~<b>30</b>°C</dd>
+				<dd class="txt3"><b style="background-color: #ffbb17">良</b></dd>
+			</dl>
+					<dl>
+				<dt>星期二</dt>
+				<dd class="txt">06月12日</dd>
+				<dd class="img"><img src="/static/wap2018/ico2/b7.png"></dd>
+				<dd class="txt2">小雨</dd>
+				<dd class="txt">21~<b>29</b>°C</dd>
+				<dd class="txt3"><b style="background-color: #ffbb17">良</b></dd>
+			</dl>
+				
+	</div>
+	<div class="more_day">
+    <a href="/jinjiangqu/" class="bg0">锦江天气预报</a>
+	<a href="/jinjiangqu/today/" class="bg1">锦江24小时天气</a>
+	<a href="/jinjiangqu/7/" class="bg2">锦江一周天气</a>
+	<a href="/jinjiangqu/10/" class="bg3">锦江10天天气</a>
+	<a href="/jinjiangqu/15/" class="bg4">锦江15天天气</a>
+	<a href="/jinjiangqu/30/" class="bg5">锦江30天天气</a>      
+	<script type="text/javascript">appdown_txt()</script>
+</div>
+<div class="clear10"></div>
+	<div class="banbox iban01"><script type="text/javascript">cityindex_01()</script></div>
+	<div class="clearbg5"></div>
+	<div class="clear5"></div>
+	
+	
+	<div class="tit02"><span><a href="/jinjiangqu/life.html">更多指数</a></span><h3>锦江生活指数</h3></div>
+	<div class="weather_life">         
+        <ul>
+					<li><i><img src="/static/wap2018/images/cai_index_yu.png"></i><b>带伞</b><p class="">无需</p></li>
+					<li><i><img src="/static/wap2018/images/cai_index_xc.png"></i><b>洗车</b><p class="">较适宜</p></li>
+					<li><i><img src="/static/wap2018/images/cai_index_uv.png"></i><b>紫外线</b><p class="">强</p></li>
+					<li><i><img src="/static/wap2018/images/cai_index_ag.png"></i><b>过敏</b><p class="">少发</p></li>
+					<li><i><img src="/static/wap2018/images/cai_index_dy.png"></i><b>钓鱼</b><p class="">不适宜</p></li>
+					<li><i><img src="/static/wap2018/images/cai_index.png"></i><b>穿衣</b><p class="">炎热</p></li>
+					<li><i><img src="/static/wap2018/images/cai_index_tr.png"></i><b>旅行</b><p class="">较适宜</p></li>
+					<li><i><img src="/static/wap2018/images/cai_index_ls.png"></i><b>晾晒</b><p class="">适宜</p></li>
+		       
+			<li class="more"><a href="/jinjiangqu/life.html">更多指数 +</a></li>
+        </ul>		
+    </div>
+	<div class="clear5"></div>
+		<div class="tit02"><h3>锦江主要地区天气预报</h3></div>
+	<ul class="more_weather2">
+					<li ><h6><a href="/longquanyi/" title="龙泉驿天气预报">龙泉驿</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>33</em>℃</b></li>
+					<li style="border-right:none;"><h6><a href="/xindu/" title="新都天气预报">新都</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>32</em>℃</b></li>
+					<li ><h6><a href="/wenjiang/" title="温江天气预报">温江</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>31</em>℃</b></li>
+					<li style="border-right:none;"><h6><a href="/jinjiangqu/" title="锦江天气预报">锦江</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>32</em>℃</b></li>
+					<li ><h6><a href="/qingyangqu/" title="青羊天气预报">青羊</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>20~<em>32</em>℃</b></li>
+					<li style="border-right:none;"><h6><a href="/jinniuqu/" title="金牛天气预报">金牛</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>20~<em>32</em>℃</b></li>
+					<li ><h6><a href="/wuhouqu/" title="武侯天气预报">武侯</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>20~<em>32</em>℃</b></li>
+					<li style="border-right:none;"><h6><a href="/chenghuaqu/" title="成华天气预报">成华</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>32</em>℃</b></li>
+					<li ><h6><a href="/qingbaijiangqu/" title="青白江天气预报">青白江</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>22~<em>33</em>℃</b></li>
+					<li style="border-right:none;"><h6><a href="/shuangliu/" title="双流天气预报">双流</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>33</em>℃</b></li>
+			</ul>
+		
+	
+	<div class="clear10"></div>
+	<div class="banbox iban02"><script type="text/javascript">cityindex_02()</script></div>	
+		<div class="clear5"></div>
+	<div class="clearline1"></div>
+	<div class="tit02"><span><a href="/chengdu/techan.html">更多+</a></span><h3>成都有哪些特产</h3></div>
+	<div class="weather_jingdian">     
+		<div class="scroll_box01">  
+			<ul class="scroll_picb01">
+							<li><a href="/techan/1545.html" title="[成都特产]水井坊酒"><i><img src="http://content.pic.tianqijun.com/content/20180226/bba57ce3d0b71ec5707f19f697b2a670.jpg" alt="[景点]水井坊酒"><em></em></i><h5>水井坊酒</h5></a></li>
+							<li><a href="/techan/2378.html" title="[成都特产]西岭佛手瓜"><i><img src="http://content.pic.tianqijun.com/content/20180307/1c02205ddf18c910d8b708c8ea08be50.jpg" alt="[景点]西岭佛手瓜"><em></em></i><h5>西岭佛手瓜</h5></a></li>
+							<li><a href="/techan/1446.html" title="[成都特产]全兴大曲"><i><img src="http://content.pic.tianqijun.com/content/20180225/98c98eac842eec080fcd1bed4912ab43.jpg" alt="[景点]全兴大曲"><em></em></i><h5>全兴大曲</h5></a></li>
+							<li><a href="/techan/1288.html" title="[成都特产]三国蜀汉阙紫砂香炉"><i><img src="http://content.pic.tianqijun.com/content/20180208/11e736b28427ffe507c9aa14f5e5fd64.jpg" alt="[景点]三国蜀汉阙紫砂香炉"><em></em></i><h5>三国蜀汉阙紫砂香炉</h5></a></li>
+							<li><a href="/techan/1078.html" title="[成都特产]灯草糕"><i><img src="http://content.pic.tianqijun.com/content/20180206/57fa788f7aa69fcd3cd172dd32df55c5.jpg" alt="[景点]灯草糕"><em></em></i><h5>灯草糕</h5></a></li>
+							<li><a href="/techan/1082.html" title="[成都特产]窝丝糖"><i><img src="http://content.pic.tianqijun.com/content/20180206/b3041d0cdc164ebe2bdb25e9bda2c5c9.jpg" alt="[景点]窝丝糖"><em></em></i><h5>窝丝糖</h5></a></li>
+							<li><a href="/techan/1084.html" title="[成都特产]甜艾团"><i><img src="http://content.pic.tianqijun.com/content/20180206/11aaa6a1c9147a1e49052fc53b762d76.jpg" alt="[景点]甜艾团"><em></em></i><h5>甜艾团</h5></a></li>
+							<li><a href="/techan/1088.html" title="[成都特产]老坎麻饼"><i><img src="http://content.pic.tianqijun.com/content/20180206/3a1d240495b7af60f8644ff55063279d.jpg" alt="[景点]老坎麻饼"><em></em></i><h5>老坎麻饼</h5></a></li>
+							<li><a href="/techan/1090.html" title="[成都特产]蜀星米花糖"><i><img src="http://content.pic.tianqijun.com/content/20180206/d9323db324417feab4c2081af0d936be.jpg" alt="[景点]蜀星米花糖"><em></em></i><h5>蜀星米花糖</h5></a></li>
+							<li><a href="/techan/1091.html" title="[成都特产]四川合川桃片"><i><img src="http://content.pic.tianqijun.com/content/20180206/9238cfa24f580ea8589edc80cd16f4a0.jpg" alt="[景点]四川合川桃片"><em></em></i><h5>四川合川桃片</h5></a></li>
+						</ul>	
+		</div>
+    </div>
+	<div class="clear5"></div>
+	<div class="clearline1"></div>
+	<div class="tit02"><span><a href="/chengdu/meishi.html">更多+</a></span><h3>好吃的美食</h3></div>
+	<div class="weather_jingdian">     
+		<div class="scroll_box01">  
+			<ul class="scroll_picb01">
+							<li><a href="/meishi/820.html" title="[美食]火锅"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/525fe3c0208bb437696c54d8.jpg" alt="[景点]火锅"><em></em></i><h5>火锅</h5></a></li>
+							<li><a href="/meishi/821.html" title="[美食]冒菜"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/779751c306e001fb54e9c017.jpg" alt="[景点]冒菜"><em></em></i><h5>冒菜</h5></a></li>
+							<li><a href="/meishi/822.html" title="[美食]豆花"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/c7a4f80f902881ae9d1d3f98.jpg" alt="[景点]豆花"><em></em></i><h5>豆花</h5></a></li>
+							<li><a href="/meishi/823.html" title="[美食]担担面"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/edf3f36db2135a0afef1f02a.jpg" alt="[景点]担担面"><em></em></i><h5>担担面</h5></a></li>
+							<li><a href="/meishi/824.html" title="[美食]干锅"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/8690f0c6212f8035c3dacec9.jpg" alt="[景点]干锅"><em></em></i><h5>干锅</h5></a></li>
+							<li><a href="/meishi/825.html" title="[美食]串串香"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/81f2d768df8adb363810bdfa.jpg" alt="[景点]串串香"><em></em></i><h5>串串香</h5></a></li>
+							<li><a href="/meishi/826.html" title="[美食]兔头"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/90816c452998d083789ce68a.jpg" alt="[景点]兔头"><em></em></i><h5>兔头</h5></a></li>
+							<li><a href="/meishi/827.html" title="[美食]夫妻肺片"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/c857f2d481183f3c4aee4cbf.jpg" alt="[景点]夫妻肺片"><em></em></i><h5>夫妻肺片</h5></a></li>
+							<li><a href="/meishi/828.html" title="[美食]回锅肉"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/d942212f9b3a1c633c26b6ef.jpg" alt="[景点]回锅肉"><em></em></i><h5>回锅肉</h5></a></li>
+							<li><a href="/meishi/829.html" title="[美食]麻婆豆腐"><i><img src="http://pic.new.tianqijun.com/tianqi/20170821/8dfe281c813217fdf3ebf3e2.jpg" alt="[景点]麻婆豆腐"><em></em></i><h5>麻婆豆腐</h5></a></li>
+						</ul>	
+		</div>
+    </div>
+<div class="clear5"></div>	
+	<div class="banbox iban03"><script type="text/javascript">cityindex_03()</script></div>
+	<div class="clearbg5"></div>
+	<div class="tit02"><h3>锦江相关资讯</h3></div>
+	<ul class="ranews_picleft">
+		<div class="banbox jiange"><script type="text/javascript">news_jiancha()</script></div>
+					<li><a href="/toutiao/read/34953.html" target="_blank" title="成都市区还藏着这么多花海？总有一处让你沦陷！"><i><img src="http://content.pic.tianqijun.com/content/20180529/6cd85ebebb47e1bde78ee0816f75d338.jpg" alt="成都市区还藏着这么多花海？总有一处让你沦陷！"></i><h5>成都市区还藏着这么多花海？总有一处让你沦陷！</h5><span>2018-05-29 </span></a></li>
+						<li><a href="/toutiao/read/34921.html" target="_blank" title="成都周边竟私藏了一片800亩玫瑰花海，浪漫到哭！"><i><img src="http://content.pic.tianqijun.com/content/20180418/cce828d4344679f93e5f0745c7c17c7f.jpg" alt="成都周边竟私藏了一片800亩玫瑰花海，浪漫到哭！"></i><h5>成都周边竟私藏了一片800亩玫瑰花海，浪漫到哭！</h5><span>2018-04-18 </span></a></li>
+			<div class="bannerbox jiancha"><script type="text/javascript">news_jiancha_01();</script></div>			<li><a href="/toutiao/read/34898.html" target="_blank" title="成都周边的几个文艺范村庄，一天打来回！"><i><img src="http://content.pic.tianqijun.com/content/20180416/b0bbaa285fbff92d2f53f7649695e085.jpg" alt="成都周边的几个文艺范村庄，一天打来回！"></i><h5>成都周边的几个文艺范村庄，一天打来回！</h5><span>2018-04-16 </span></a></li>
+						<li><a href="/toutiao/read/34865.html" target="_blank" title="成都，有1000种方式让你爱上它！离不开他！"><i><img src="http://content.pic.tianqijun.com/content/20180412/9511862f72cb65e5cff18a19b30f8dff.jpg" alt="成都，有1000种方式让你爱上它！离不开他！"></i><h5>成都，有1000种方式让你爱上它！离不开他！</h5><span>2018-04-12 </span></a></li>
+			<div class="bannerbox jiancha"><script type="text/javascript">news_jiancha_02();</script></div>			<li><a href="/toutiao/read/34836.html" target="_blank" title="成都周边采摘草莓攻略，赶紧走起！"><i><img src="http://content.pic.tianqijun.com/content/20180410/2c8ced139263bfe3f8388cf0572192d3.jpg" alt="成都周边采摘草莓攻略，赶紧走起！"></i><h5>成都周边采摘草莓攻略，赶紧走起！</h5><span>2018-04-10 </span></a></li>
+						<li><a href="/toutiao/read/34798.html" target="_blank" title="春茶正当时！成都附近的清新采茶地！走起~"><i><img src="http://content.pic.tianqijun.com/content/20180408/7ac5876cd631abefbc73357641bb899e.jpg" alt="春茶正当时！成都附近的清新采茶地！走起~"></i><h5>春茶正当时！成都附近的清新采茶地！走起~</h5><span>2018-04-08 </span></a></li>
+			<div class="bannerbox jiancha"><script type="text/javascript">news_jiancha_03();</script></div>			<li><a href="/toutiao/read/34762.html" target="_blank" title="距成都3h！这个小县竟私藏了媲美川西的人间秘境！"><i><img src="http://content.pic.tianqijun.com/content/20180402/6480e0dede32d3b0178a4c11df254766.jpg" alt="距成都3h！这个小县竟私藏了媲美川西的人间秘境！"></i><h5>距成都3h！这个小县竟私藏了媲美川西的人间秘境！</h5><span>2018-04-02 </span></a></li>
+						<li><a href="/toutiao/read/34761.html" target="_blank" title="成都边上的这个小城惊艳了整个春天！清明假期走起！"><i><img src="http://content.pic.tianqijun.com/content/20180402/cc698671040a8e8dfab82d6632c34fe7.jpg" alt="成都边上的这个小城惊艳了整个春天！清明假期走起！"></i><h5>成都边上的这个小城惊艳了整个春天！清明假期走起！</h5><span>2018-04-02 </span></a></li>
+			<div class="bannerbox jiancha"><script type="text/javascript">news_jiancha_04();</script></div>			<li><a href="/toutiao/read/34721.html" target="_blank" title="《2018成都周边最美赏花地图》90%不要钱！约约约~"><i><img src="http://content.pic.tianqijun.com/content/20180328/d01ebc1fab13a83ec62e02acdb56d1a1.jpg" alt="《2018成都周边最美赏花地图》90%不要钱！约约约~"></i><h5>《2018成都周边最美赏花地图》90%不要钱！约约约~</h5><span>2018-03-28 </span></a></li>
+						<li><a href="/toutiao/read/34637.html" target="_blank" title="春风十里！成都边上有处千亩桃花海，一小时车程！"><i><img src="http://content.pic.tianqijun.com/content/20180321/e6568cdee6600251447321acc5d249bc.jpg" alt="春风十里！成都边上有处千亩桃花海，一小时车程！"></i><h5>春风十里！成都边上有处千亩桃花海，一小时车程！</h5><span>2018-03-21 </span></a></li>
+			<div class="bannerbox jiancha"><script type="text/javascript">news_jiancha_05();</script></div>	</ul>
+	<div class="banbox iban04"><script type="text/javascript">cityindex_04()</script></div>
+
+	<div class="tit02"><h2>最新天气资讯</h2></div>
+	<ul class="wap_txt01">
+		<li><a href="/news/221419.html">台风路径实时发布系统2018 艾云尼今夜间将在海南东北部海面回旋</a></li><li><a href="/news/221418.html">5号台风最新消息 现编号TD-b今后不会登陆我国</a></li><li><a href="/news/221417.html">台风路径实时发布系统卫星云图 4号台风登陆海口现状图</a></li><li><a href="/news/221416.html">2018年台风马力斯走向 5号台风马力斯高清卫星云图</a></li><li><a href="/news/221415.html">2018河南高考天气预报 明后天多地气温34℃以上</a></li><li><a href="/news/221414.html">2018年第5号台风最新消息 台风马力斯一个清奇的转向台风</a></li><li><a href="/news/221413.html">北京大部持续高温  明日高考气温跌至33℃</a></li><li><a href="/news/221412.html">2018台风路径最新消息 2018四号台风艾云尼终究难舍广东</a></li><li><a href="/news/221411.html">台风“艾云尼”最新消息2018 明起将二次登陆广东</a></li><li><a href="/news/221410.html">台风致海口多路段积水 6月6日海口路况实时查询</a></li>	</ul>
+	<div class="clear10"></div>
+	<div class="banbox iban04"><script type="text/javascript">cityindex_05()</script></div>
+	<div class="clearbg5"></div>
+			<div class="tit02"><h3>锦江周边市县天气预报</h3></div>
+		<ul class="more_weather2">
+							<li ><h6><a href="/dayi/" title="大邑天气预报">大邑</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>20~<em>31</em>℃</b></li>
+							<li style="border-right:none;"><h6><a href="/pujiang1/" title="蒲江天气预报">蒲江</a></h6><i><img src="/static/wap2018/ico2/b0.png" />晴 </i><b>20~<em>33</em>℃</b></li>
+							<li ><h6><a href="/xinjin/" title="新津天气预报">新津</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>34</em>℃</b></li>
+							<li style="border-right:none;"><h6><a href="/jintang/" title="金堂天气预报">金堂</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>22~<em>33</em>℃</b></li>
+							<li ><h6><a href="/pixian/" title="郫县天气预报">郫县</a></h6><i><img src="/static/wap2018/ico2/b1.png" />多云 </i><b>21~<em>31</em>℃</b></li>
+					</ul>
+		<div class="clearbg5"></div>
+		<div class="clearbg5"></div>
+		<div class="tit02"><h3>主要城市天气预报</h3></div>
+		<p class="more_city5">
+							<a href="/chengdu/" title="成都天气预报">成都天气</a></li>
+							<a href="/dujiangyan/" title="都江堰天气预报">都江堰天气</a></li>
+							<a href="/pengzhou/" title="彭州天气预报">彭州天气</a></li>
+							<a href="/qionglai/" title="邛崃天气预报">邛崃天气</a></li>
+							<a href="/chongzhou/" title="崇州天气预报">崇州天气</a></li>
+							<a href="/panzhihua/" title="攀枝花天气预报">攀枝花天气</a></li>
+							<a href="/zigong/" title="自贡天气预报">自贡天气</a></li>
+							<a href="/mianyang/" title="绵阳天气预报">绵阳天气</a></li>
+							<a href="/nanchong/" title="南充天气预报">南充天气</a></li>
+							<a href="/dazhou/" title="达州天气预报">达州天气</a></li>
+							<a href="/suining1/" title="遂宁天气预报">遂宁天气</a></li>
+							<a href="/guangan/" title="广安天气预报">广安天气</a></li>
+							<a href="/huaying/" title="华蓥天气预报">华蓥天气</a></li>
+							<a href="/bazhong/" title="巴中天气预报">巴中天气</a></li>
+							<a href="/luzhou/" title="泸州天气预报">泸州天气</a></li>
+							<a href="/yibin/" title="宜宾天气预报">宜宾天气</a></li>
+							<a href="/neijiang/" title="内江天气预报">内江天气</a></li>
+							<a href="/ziyang1/" title="资阳天气预报">资阳天气</a></li>
+							<a href="/leshan/" title="乐山天气预报">乐山天气</a></li>
+							<a href="/meishan/" title="眉山天气预报">眉山天气</a></li>
+							<a href="/liangshan1/" title="凉山天气预报">凉山天气</a></li>
+							<a href="/yaan/" title="雅安天气预报">雅安天气</a></li>
+							<a href="/ganzi/" title="甘孜天气预报">甘孜天气</a></li>
+							<a href="/deyang/" title="德阳天气预报">德阳天气</a></li>
+							<a href="/guangyuan/" title="广元天气预报">广元天气</a></li>
+					</p>
+		<div class="clear10"></div>
+		
+	<div class="clearline1"></div>
+	<div class="tit02"><h3>国内主要城市天气预报</h3></div>
+	<p class="more_city5">
+		<a href="/meizhou/" title="梅州市天气预报">梅州市天气</a></li><a href="/huizhou/" title="惠州市天气预报">惠州市天气</a></li><a href="/erlianhaote/" title="二连浩特市天气预报">二连浩特市天气</a></li><a href="/shantou/" title="汕头市天气预报">汕头市天气</a></li><a href="/haikou/" title="海口市天气预报">海口市天气</a></li><a href="/heyuan/" title="河源市天气预报">河源市天气</a></li><a href="/xianggelila/" title="香格里拉天气预报">香格里拉天气</a></li><a href="/sanming/" title="三明市天气预报">三明市天气</a></li><a href="/maoming/" title="茂名市天气预报">茂名市天气</a></li><a href="/hualian/" title="花莲县天气预报">花莲县天气</a></li><a href="/shaoguan/" title="韶关市天气预报">韶关市天气</a></li><a href="/nanping/" title="南平市天气预报">南平市天气</a></li><a href="/shenzhen/" title="深圳市天气预报">深圳市天气</a></li><a href="/dongguan/" title="东莞市天气预报">东莞市天气</a></li><a href="/zhongshan/" title="中山市天气预报">中山市天气</a></li><a href="/taidong/" title="台东县天气预报">台东县天气</a></li><a href="/sanya/" title="三亚市天气预报">三亚市天气</a></li><a href="/chaozhou/" title="潮州市天气预报">潮州市天气</a></li><a href="/chaohushi/" title="巢湖市天气预报">巢湖市天气</a></li><a href="/yunfu/" title="云浮市天气预报">云浮市天气</a></li><a href="/yilan/" title="宜兰县天气预报">宜兰县天气</a></li><a href="/zhuhai/" title="珠海市天气预报">珠海市天气</a></li><a href="/zhaoqing/" title="肇庆市天气预报">肇庆市天气</a></li><a href="/qingyuan/" title="清远市天气预报">清远市天气</a></li><a href="/guangzhou/" title="广州市天气预报">广州市天气</a></li><a href="/foshan/" title="佛山市天气预报">佛山市天气</a></li><a href="/lincang/" title="临沧市天气预报">临沧市天气</a></li><a href="/penghu/" title="澎湖县天气预报">澎湖县天气</a></li><a href="/zhanjiang/" title="湛江市天气预报">湛江市天气</a></li><a href="/xiamen/" title="厦门市天气预报">厦门市天气</a></li><a href="/wenzhou/" title="温州市天气预报">温州市天气</a></li>	</p>
+	<div class="clear10"></div>
+	<div class="clearline1"></div>
+	<div class="tit02"><h3>国内各省天气预报</h3></div>
+	<p class="more_city5">
+					<a href="/beijing/" title="北京天气预报">北京天气</a>
+					<a href="/tianjin/" title="天津天气预报">天津天气</a>
+					<a href="/chongqing/" title="重庆天气预报">重庆天气</a>
+					<a href="/shanghai/" title="上海天气预报">上海天气</a>
+					<a href="/province/zhejiang/" title="浙江天气预报">浙江天气</a>
+					<a href="/province/jiangsu/" title="江苏天气预报">江苏天气</a>
+					<a href="/province/fujian/" title="福建天气预报">福建天气</a>
+					<a href="/province/jiangxi/" title="江西天气预报">江西天气</a>
+					<a href="/province/anhui/" title="安徽天气预报">安徽天气</a>
+					<a href="/province/liaoning/" title="辽宁天气预报">辽宁天气</a>
+					<a href="/province/jilin/" title="吉林天气预报">吉林天气</a>
+					<a href="/province/heilongjiang/" title="黑龙江天气预报">黑龙江天气</a>
+					<a href="/province/hainan/" title="海南天气预报">海南天气</a>
+					<a href="/province/guangdong/" title="广东天气预报">广东天气</a>
+					<a href="/province/guangxi/" title="广西天气预报">广西天气</a>
+					<a href="/province/shandong/" title="山东天气预报">山东天气</a>
+					<a href="/province/shanxi/" title="山西天气预报">山西天气</a>
+					<a href="/province/hunan/" title="湖南天气预报">湖南天气</a>
+					<a href="/province/hubei/" title="湖北天气预报">湖北天气</a>
+					<a href="/province/henan/" title="河南天气预报">河南天气</a>
+					<a href="/province/hebei/" title="河北天气预报">河北天气</a>
+					<a href="/province/xinjiang/" title="新疆天气预报">新疆天气</a>
+					<a href="/province/xizang/" title="西藏天气预报">西藏天气</a>
+					<a href="/province/neimenggu/" title="内蒙古天气预报">内蒙古天气</a>
+					<a href="/province/sichuan/" title="四川天气预报">四川天气</a>
+					<a href="/province/yunnan/" title="云南天气预报">云南天气</a>
+					<a href="/province/guizhou/" title="贵州天气预报">贵州天气</a>
+					<a href="/province/shanxi1/" title="陕西天气预报">陕西天气</a>
+					<a href="/province/qinghai/" title="青海天气预报">青海天气</a>
+					<a href="/province/ningxia/" title="宁夏天气预报">宁夏天气</a>
+					<a href="/province/gansu/" title="甘肃天气预报">甘肃天气</a>
+					<a href="/hongkong/" title="香港天气预报">香港天气</a>
+					<a href="/aomen/" title="澳门天气预报">澳门天气</a>
+					<a href="/taiwan/" title="台湾天气预报">台湾天气</a>
+			</p>
+	<div class="clear10"></div>
+	
+	<div class="banbox iban05"><script type="text/javascript">cityindex_06()</script></div>
+	
+<div class="footer">
+    <b><a href="http://www.tianqi.com/">电脑版</a><i>丨</i><a href="http://m.tianqi.com/">天气网</a><i>丨</i><a href="http://www.tianqi.com/weixinshuoming.html">官方微信</a><i>丨</i><a href="http://app.tianqi.com/">天气君APP</a></b>
+    <p>版权所有 Copyright© 2009-2016 <br />琼ICP备13002747号-1</p>
+    <div style="display:none;"><script type="text/javascript">tongji()</script></div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        var toph = $('.topbar').offset().top;
+        var barh = toph + $('.topbar').height();
+        var menuheight = $(window).height() - barh;
+        $("#subnemu").height(menuheight);
+        $("#subnemu").css('top',barh+'px');
+        $(window).bind("scroll", function () {
+            $("#subnemu").hide();
+        });
+    });
+</script>
+
+</div>
+<script type="text/javascript" charset="utf-8">
+$(function() {
+	$('.scroll_picb01').each(function(index){
+		var _child = $(this).children().length;
+		var _width = $(this).children().width() + 6;
+		var boxwidth = _child * _width;
+		$(this).css('width', boxwidth +'px');
+	});
+	$("img.lazyload").lazyload({effect: "fadeIn"});
+	var defwidth = $('.outheight').width();
+	var outheight = parseInt(defwidth*55/100);
+	$('.outheight').css('height' , outheight + 'px');
+});
+
+//  授权
+var citys = '锦江区';
+
+
+
+
+</script>
+
+<div class="tongji" style="display:none;"><script language="javascript">tongji();</script></div>
+</body>
+</html>
